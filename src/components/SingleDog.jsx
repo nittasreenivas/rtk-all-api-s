@@ -53,7 +53,7 @@ function SingleDog() {
 
   return (
     <div className='border border-2 border-danger m-2 p-2'>
-      <h3>SingleDog</h3>
+     
       {isLoading ? (
         <div className='spinner-border text-danger text-center' role='status'>
           <span className='visually-hidden'>Loading...</span>

@@ -17,9 +17,9 @@ function Dogs() {
                     {
                         data.map((d,i) => {
                             return(
-                                <div className="card p-2 m-3" style={{width:"15rem"}} key={i}>
+                                <div className="card p-2 m-3 " style={{width:"15rem"}} key={i}>
                                     <Link to={`/dog/${d.name}`}>
-                                <img src={d.image.url} className="card-img-top" alt="..."/>
+                                <img src={d.image.url} className="card-img-top img-fluid " alt="..."/>
                                 </Link>
                               </div>
                             )
