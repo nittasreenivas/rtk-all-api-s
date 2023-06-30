@@ -14,7 +14,7 @@ function Photo() {
   <span className="visually-hidden">Loading...</span>
 </div>
             ): (
-                <div className='d-flex flex-wrap justift-content-around'>
+                <div className='d-flex flex-wrap justify-content-around'>
                     {
                         slicedData.map((d,i) => {
                             return(
