@@ -1,16 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Bored() {
     const [activity,setActivity] = useState("")
+
     const getActivity = async () => {
         const res = await fetch("https://www.boredapi.com/api/activity")
         const data = await res.json()
-        console.log("data::",data)
         setActivity(data)
+        toast.success("Activity generated")
     }
   return (
     <div>
-
+      
     <section className='vasu'>
         <h3>Sorry for being Bored....</h3>
         <p>Use the button to generate a fun activity to try</p>
@@ -38,6 +41,7 @@ function Bored() {
         }
        
     </section>
+    <ToastContainer theme='colored' position='bottom-center'/>
     </div>
   )
 }
