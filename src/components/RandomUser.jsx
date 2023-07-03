@@ -6,7 +6,7 @@ function RandomUser() {
     console.log("data::",data,isLoading)
   return (
     <div >
-        <h3 className='text-center'>RandomUser</h3>
+        <h3 className='text-center mt-2'>RandomUser</h3>
         {
             isLoading ? (
                 <div className="spinner-border text-danger" role="status">
@@ -18,7 +18,7 @@ function RandomUser() {
                         data.results.map((d,i) => {
                             return(
                                 <div className="card p-2 m-3" style={{width:"15rem"}} key={i}>
-                                    <Link to={`/random/${d.id}`}>
+                                    <Link to={`/random/${d.login.uuid}`}>
                                 <img src={d.picture.large} className="card-img-top" alt="..."/>
                                 </Link>
                               </div>
