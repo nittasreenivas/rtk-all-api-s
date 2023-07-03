@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { Provider } from 'react-redux';
 import store from './app/store';
-
+import "./index.css"
 function App() {
   return (
     <div className="border border-2 m-2 p-2">

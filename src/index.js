@@ -27,6 +27,9 @@ import Cocktails from './components/Cocktails';
 import SingleCocktail from './components/SingleCocktail';
 import Plazo from './components/Plazo';
 import SinglePlazo from './components/SinglePlazo';
+import Button from './components/Button';
+import RandomUser from './components/RandomUser';
+import SingleRandomUser from './components/SingleRandomUser';
 
 
 const router = createBrowserRouter([
@@ -109,6 +112,18 @@ const router = createBrowserRouter([
       {
         path:'/plato/:id',
         element:<SinglePlazo></SinglePlazo>
+      },
+      {
+        path:'/button',
+        element:<Button></Button>
+      },
+      {
+        path:'/random',
+        element:<RandomUser></RandomUser>
+      },
+      {
+        path:'/random/:id',
+        element:<SingleRandomUser></SingleRandomUser>
       }
     ]
   },

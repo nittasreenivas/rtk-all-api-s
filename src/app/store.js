@@ -10,6 +10,7 @@ import { fakeApi } from "../services/fakeApi";
 import { countryApi } from "../services/countryApi";
 import { cocktailApi } from "../services/cocktailApi";
 import { platoApi } from "../services/platoApi";
+import { randomApi } from "../services/randomApi";
 const store = configureStore({
     reducer:{
         [dummyApi.reducerPath]: dummyApi.reducer,
@@ -21,6 +22,7 @@ const store = configureStore({
         [   countryApi.reducerPath]:   countryApi.reducer,
         [ cocktailApi.reducerPath]:  cocktailApi.reducer,
         [ platoApi.reducerPath]:  platoApi.reducer,
+        [ randomApi.reducerPath]: randomApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -33,6 +35,7 @@ const store = configureStore({
         countryApi.middleware,
         cocktailApi.middleware,
         platoApi.middleware,
+        randomApi.middleware,
         ),
 })
 setupListeners(store.dispatch)

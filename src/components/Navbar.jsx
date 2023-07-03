@@ -36,6 +36,12 @@ function Navbar() {
       <li className="nav-item">
       <Link className="nav-link active" to="/plato">Plazo</Link>
       </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/button">Button</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/random">Random</Link>
+      </li>
     </ul>
   </div>
 </nav>
