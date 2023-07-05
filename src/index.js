@@ -30,6 +30,10 @@ import SinglePlazo from './components/SinglePlazo';
 import Button from './components/Button';
 import RandomUser from './components/RandomUser';
 import SingleRandomUser from './components/SingleRandomUser';
+import People from './components/People';
+import SinglePerson from './components/SinglePerson';
+import Books from './components/Books';
+import Singlebook from './components/Singlebook';
 
 
 const router = createBrowserRouter([
@@ -124,6 +128,22 @@ const router = createBrowserRouter([
       {
         path:'/random/:id',
         element:<SingleRandomUser></SingleRandomUser>
+      },
+      {
+        path:'/people',
+        element:<People></People>
+      },
+      {
+        path:'/people/:id',
+        element:<SinglePerson></SinglePerson>
+      },
+      {
+        path:'/books',
+        element:<Books></Books>
+      },
+      {
+        path:'/books/:title',
+        element:<Singlebook></Singlebook>
       }
     ]
   },

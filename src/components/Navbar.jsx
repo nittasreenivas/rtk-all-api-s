@@ -42,6 +42,12 @@ function Navbar() {
       <li className="nav-item">
       <Link className="nav-link active" to="/random">Random</Link>
       </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/people">People</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/books">Books</Link>
+      </li>
     </ul>
   </div>
 </nav>
