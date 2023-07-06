@@ -34,6 +34,8 @@ import People from './components/People';
 import SinglePerson from './components/SinglePerson';
 import Books from './components/Books';
 import Singlebook from './components/Singlebook';
+import Meals from './components/Meals';
+import SingleMeal from './components/SingleMeal';
 
 
 const router = createBrowserRouter([
@@ -144,6 +146,14 @@ const router = createBrowserRouter([
       {
         path:'/books/:title',
         element:<Singlebook></Singlebook>
+      },
+      {
+        path:'/meals',
+        element:<Meals></Meals>
+      },
+      {
+        path:'/meals/:strMeal',
+        element:<SingleMeal></SingleMeal>
       }
     ]
   },
