@@ -1,15 +1,15 @@
 import React from 'react'
-import { useGetSinglePlatoQuery } from '../services/platoApi'
-import { useParams ,useNavigate} from 'react-router-dom'
-function SinglePlazo() {
-    const {id} = useParams()
+import { useGetSingleCrewMemberQuery } from '../services/crewApi'
+import { useParams, useNavigate } from 'react-router-dom';
+
+function Singlecrew() {
+    const { id } = useParams();
     console.log("id::",id)
-    const navigate = useNavigate()
-    var {isLoading,data} =  useGetSinglePlatoQuery(id)
-    console.log("data::",data,isLoading)
+    const navigate = useNavigate();
+    const { isLoading, data } = useGetSingleCrewMemberQuery(id)
     const handleback = () => {
-        navigate('/plato')
-    }
+        navigate('/crew');
+      };
   return (
     <div className='border border-2 border-danger m-2 p-2'>
          {
@@ -20,10 +20,11 @@ function SinglePlazo() {
             ): (
                 <div className='d-flex flex-wrap justify-content-center mt-3 p-3'>
                     <div className="card"  style={{width:"15rem"}}>
-  <img src={data.images[0]} className="card-img-top" alt="..."/>
+  <img src={data.image} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <h5 className="card-title">{data.title}</h5>
-    <h5 className="card-title">${data.price}</h5>
+    <h5 className="card-title">{data.name}</h5>
+    <p className="card-text">{data.agency}</p>
+   
     <button  className="btn btn-success" onClick={handleback}>Go Back</button>
   </div>
 </div>
@@ -34,4 +35,4 @@ function SinglePlazo() {
   )
 }
 
-export default SinglePlazo
+export default Singlecrew

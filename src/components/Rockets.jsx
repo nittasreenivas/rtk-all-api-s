@@ -1,12 +1,12 @@
 import React from 'react'
-import { useGetAllPlatoProductsQuery } from '../services/platoApi'
+import { useGetAllRocketsQuery } from '../services/rocketApi'
 import { Link } from 'react-router-dom'
-function Plazo() {
-    var {isLoading,data} =   useGetAllPlatoProductsQuery()
+function Rockets() {
+    var {isLoading,data} =  useGetAllRocketsQuery()
     console.log("data::",data,isLoading)
   return (
-    <div  className='border border-2 border-danger m-2 p-2'>
-        <h3 className='text-center'>Plazo</h3>
+    <div className='border border-2 border-danger m-2 p-2'>
+        <h3 className='text-center'>Rockets</h3>
         {
             isLoading ? (
                 <div className="spinner-border text-danger" role="status">
@@ -16,13 +16,10 @@ function Plazo() {
                 <div className='d-flex flex-wrap justify-content-around'>
                     {
                         data.map((d,i) => {
-                            if (!d.images[0] || d.images[0].length === 0) {
-                                return null;
-                              }
                             return(
                                 <div className="card p-2 m-3" style={{width:"15rem"}} key={i}>
-                                    <Link to={`/plato/${d.id}`}>
-                                <img src={d.images[0]} className="card-img-top" alt="..."/>
+                                    <Link to={`/rockets/${d.id}`}>
+                                <img src={d.flickr_images[1]} className="card-img-top" alt="..."/>
                                 </Link>
                               </div>
                             )
@@ -35,4 +32,4 @@ function Plazo() {
   )
 }
 
-export default Plazo
+export default Rockets

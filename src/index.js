@@ -36,6 +36,18 @@ import Books from './components/Books';
 import Singlebook from './components/Singlebook';
 import Meals from './components/Meals';
 import SingleMeal from './components/SingleMeal';
+import Crew from './components/Crew';
+import Singlecrew from './components/Singlecrew';
+import Rockets from './components/Rockets';
+import Singlerocket from './components/Singlerocket';
+import Ships from './components/Ships';
+import SingleShip from './components/SingleShip';
+import Launch from './components/Launch';
+import Singlelaunch from './components/Singlelaunch';
+import Launchpad from './components/Launchpad';
+import Singlelaunchpad from './components/Singlelaunchpad';
+import Dragons from './components/Dragons';
+import Singledragon from './components/Singledragon';
 
 
 const router = createBrowserRouter([
@@ -154,6 +166,54 @@ const router = createBrowserRouter([
       {
         path:'/meals/:strMeal',
         element:<SingleMeal></SingleMeal>
+      },
+      {
+        path:'/crew',
+        element:<Crew></Crew>
+      },
+      {
+        path:'/crew/:id',
+        element:<Singlecrew></Singlecrew>
+      },
+      {
+        path:'/rockets',
+        element:<Rockets></Rockets>
+      },
+      {
+        path:'/rockets/:id',
+        element:<Singlerocket></Singlerocket>
+      },
+      {
+        path:'/ships',
+        element:<Ships></Ships>
+      },
+      {
+        path:'/ships/:id',
+        element:<SingleShip></SingleShip>
+      },
+      {
+        path:'/launch',
+        element:<Launch></Launch>
+      },
+      {
+        path:'/launch/:id',
+        element:<Singlelaunch></Singlelaunch>
+      },
+      {
+        path:'/launchpad',
+        element:<Launchpad></Launchpad>
+      },
+      {
+        path:'/launchpad/:id',
+        element:<Singlelaunchpad></Singlelaunchpad>
+      },
+      {
+        path:'/dragons',
+        element:<Dragons></Dragons>
+      },
+      {
+        path:'/dragons/:id',
+        element:<Singledragon></Singledragon>
       }
     ]
   },

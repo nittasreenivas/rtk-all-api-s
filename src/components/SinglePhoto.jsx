@@ -11,7 +11,7 @@ function SinglePhoto() {
         navigate('/photo')
     }
   return (
-    <div>
+    <div className='border border-2 border-danger m-2 p-2'>
        
         {
             isLoading ? (

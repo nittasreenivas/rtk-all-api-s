@@ -1,12 +1,13 @@
 import React from 'react'
-import { useGetAllPlatoProductsQuery } from '../services/platoApi'
 import { Link } from 'react-router-dom'
-function Plazo() {
-    var {isLoading,data} =   useGetAllPlatoProductsQuery()
+import { useGetAllDragonsQuery } from '../services/dragonsApi'
+
+function Dragons() {
+    var {isLoading,data} =   useGetAllDragonsQuery()
     console.log("data::",data,isLoading)
   return (
-    <div  className='border border-2 border-danger m-2 p-2'>
-        <h3 className='text-center'>Plazo</h3>
+    <div className='border border-2 border-danger m-2 p-2'>
+        <h3 className='text-center'>Dragons</h3>
         {
             isLoading ? (
                 <div className="spinner-border text-danger" role="status">
@@ -16,13 +17,13 @@ function Plazo() {
                 <div className='d-flex flex-wrap justify-content-around'>
                     {
                         data.map((d,i) => {
-                            if (!d.images[0] || d.images[0].length === 0) {
-                                return null;
-                              }
+                            // if (!d.links.patch.small) {
+                            //     return null; 
+                            //   }
                             return(
                                 <div className="card p-2 m-3" style={{width:"15rem"}} key={i}>
-                                    <Link to={`/plato/${d.id}`}>
-                                <img src={d.images[0]} className="card-img-top" alt="..."/>
+                                    <Link to={`/dragons/${d.id}`}>
+                                <img src={d.flickr_images[2]} className="card-img-top" alt="..."/>
                                 </Link>
                               </div>
                             )
@@ -35,4 +36,4 @@ function Plazo() {
   )
 }
 
-export default Plazo
+export default Dragons

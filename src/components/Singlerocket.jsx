@@ -1,16 +1,15 @@
 import React from 'react'
+import { useGetSingleRocketQuery } from '../services/rocketApi'
 import { useParams ,useNavigate} from 'react-router-dom'
-import { useGetSingleRandomUserQuery } from '../services/randomApi'
-
-const SingleRandomUser = () => {
-    const { id } = useParams()
-  console.log("id::", id)
-  const { isLoading, data } = useGetSingleRandomUserQuery(id)
-  console.log("data::", data)
-  const navigate = useNavigate()
-  const handleback = () => {
-    navigate('/random')
-  }
+function Singlerocket() {
+    const {id} = useParams()
+    console.log("id::",id)
+    const navigate = useNavigate()
+    var {isLoading,data} =  useGetSingleRocketQuery(id)
+    console.log("data::",data,isLoading)
+    const handleback = () => {
+        navigate('/rockets')
+    }
   return (
     <div className='border border-2 border-danger m-2 p-2'>
       {
@@ -21,11 +20,12 @@ const SingleRandomUser = () => {
             ): (
                 <div className='d-flex flex-wrap justify-content-center mt-3 p-3'>
                     <div className="card"  style={{width:"15rem"}}>
-  <img src={data.results[0].picture.thumbnail} className="card-img-top" alt="..."/>
+  <img src={data.flickr_images[1]} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <h5 className="card-title">{data.results[0].name.first}</h5>
-    <h5 className="card-title">{data.results[0].name.last}</h5>
-    {/* <h5 className="card-title">${data.price}</h5>  */}
+    <h5 className="card-title">{data.name}</h5>
+    <h5 className="card-title">{data.type}</h5>
+    <h5 className="card-title">${data.cost_per_launch}</h5>
+    <a href={data.wikipedia} target="_blank" rel="noreferrer">Rocket Link</a> <br/> <br/>
     <button  className="btn btn-success" onClick={handleback}>Go Back</button>
   </div>
 </div>
@@ -36,4 +36,4 @@ const SingleRandomUser = () => {
   )
 }
 
-export default SingleRandomUser
+export default Singlerocket

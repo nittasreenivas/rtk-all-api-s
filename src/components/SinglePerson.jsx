@@ -14,7 +14,7 @@ const SinglePerson = () => {
         navigate('/people')
     }
   return (
-    <div>
+    <div className='border border-2 border-danger m-2 p-2'>
         
         <div className='d-flex flex-wrap justify-content-center mt-3 p-3'>
                     <div className="card"  style={{width:"15rem"}}>

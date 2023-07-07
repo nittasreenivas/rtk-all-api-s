@@ -12,6 +12,12 @@ import { cocktailApi } from "../services/cocktailApi";
 import { platoApi } from "../services/platoApi";
 import { randomApi } from "../services/randomApi";
 import { mealsApi } from "../services/mealsApi";
+import { crewApi } from "../services/crewApi";
+import { rocketApi } from "../services/rocketApi";
+import { shipApi } from "../services/shipApi";
+import { launchApi } from "../services/launchApi";
+import { launchpadApi } from "../services/launchpadApi";
+import { dragonsApi } from "../services/dragonsApi";
 const store = configureStore({
     reducer:{
         [dummyApi.reducerPath]: dummyApi.reducer,
@@ -25,6 +31,12 @@ const store = configureStore({
         [ platoApi.reducerPath]:  platoApi.reducer,
         [ randomApi.reducerPath]: randomApi.reducer,
         [  mealsApi.reducerPath]:  mealsApi.reducer,
+        [  crewApi.reducerPath]:  crewApi.reducer,
+        [  rocketApi.reducerPath]:  rocketApi.reducer,
+        [   shipApi.reducerPath]:   shipApi.reducer,
+        [   launchApi.reducerPath]:   launchApi.reducer,
+        [   launchpadApi.reducerPath]:  launchpadApi.reducer,
+        [   dragonsApi.reducerPath]:  dragonsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -39,6 +51,12 @@ const store = configureStore({
         platoApi.middleware,
         randomApi.middleware,
         mealsApi.middleware,
+        crewApi.middleware,
+        rocketApi.middleware,
+        shipApi.middleware,
+        launchApi.middleware,
+        launchpadApi.middleware,
+        dragonsApi.middleware,
         ),
 })
 setupListeners(store.dispatch)

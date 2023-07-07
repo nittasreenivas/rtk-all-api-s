@@ -1,19 +1,18 @@
 import React from 'react'
+import { useGetSingleShipQuery } from '../services/shipApi'
 import { useParams ,useNavigate} from 'react-router-dom'
-import { useGetSingleRandomUserQuery } from '../services/randomApi'
-
-const SingleRandomUser = () => {
-    const { id } = useParams()
-  console.log("id::", id)
-  const { isLoading, data } = useGetSingleRandomUserQuery(id)
-  console.log("data::", data)
-  const navigate = useNavigate()
-  const handleback = () => {
-    navigate('/random')
-  }
+function SingleShip() {
+    const {id} = useParams()
+    console.log("id::",id)
+    const navigate = useNavigate()
+    var {isLoading,data} =  useGetSingleShipQuery(id)
+    console.log("data::",data,isLoading)
+    const handleback = () => {
+        navigate('/ships')
+    }
   return (
     <div className='border border-2 border-danger m-2 p-2'>
-      {
+        {
             isLoading ? (
                 <div className="spinner-border text-danger text-center" role="status">
   <span className="visually-hidden">Loading...</span>
@@ -21,11 +20,12 @@ const SingleRandomUser = () => {
             ): (
                 <div className='d-flex flex-wrap justify-content-center mt-3 p-3'>
                     <div className="card"  style={{width:"15rem"}}>
-  <img src={data.results[0].picture.thumbnail} className="card-img-top" alt="..."/>
+  <img src={data.image} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <h5 className="card-title">{data.results[0].name.first}</h5>
-    <h5 className="card-title">{data.results[0].name.last}</h5>
-    {/* <h5 className="card-title">${data.price}</h5>  */}
+    <h5 className="card-title">{data.name}</h5>
+    <h5 className="card-title">{data.home_port}</h5>
+    
+    <a href={data.link} target="_blank" rel="noreferrer">ship Link</a> <br/> <br/>
     <button  className="btn btn-success" onClick={handleback}>Go Back</button>
   </div>
 </div>
@@ -36,4 +36,4 @@ const SingleRandomUser = () => {
   )
 }
 
-export default SingleRandomUser
+export default SingleShip

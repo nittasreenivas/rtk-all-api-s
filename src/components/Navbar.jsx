@@ -51,6 +51,24 @@ function Navbar() {
       <li className="nav-item">
       <Link className="nav-link active" to="/meals">Meals</Link>
       </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/crew">Crew</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/rockets">Rockets</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/ships">ships</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/launch">Launch</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/launchpad">Launchpad</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link active" to="/dragons">Dragons</Link>
+      </li>
     </ul>
   </div>
 </nav>
